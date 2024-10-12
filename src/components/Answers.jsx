@@ -10,6 +10,7 @@ export default function Answers(props) {
 
   const divKey = nanoid();
   const answersExist = props.question && props.question.answers;
+  
   useEffect(() => {
     setCorrectState([]);
     setCurrentAnswerClassName(currentAnswerClassName);

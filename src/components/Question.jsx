@@ -7,9 +7,22 @@ export default function Question(props) {
   const codeblock = props.questions[props.currentQuestion].code;
 
   const codeRef = useRef();
+
   useEffect(() => {
     if (codeRef && codeRef.current) {
-      hljs.highlightElement(codeRef.current);
+
+      const element = codeRef.current;
+
+      if (element.dataset.highlighted === "true") {
+        delete element.dataset.highlighted;
+      }
+
+      // Apply highlighting
+      hljs.highlightElement(element);
+
+      // Mark as highlighted
+      element.dataset.highlighted = "true";
+
     }
   }, [codeblock]);
 

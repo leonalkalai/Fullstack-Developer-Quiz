@@ -1,0 +1,21 @@
+# Headers for files in the protected directory
+[[headers]]
+  for = "/*"  # Applies to all files
+  [headers.values]
+    X-Robots-Tag = "noindex"  # Prevents indexing by search engines
+    X-Frame-Options = "DENY"  # Prevents embedding
+    Referrer-Policy = "no-referrer"  # Controls referrer information
+
+# Allow CORS for the specific origin (your React app)
+[[headers]]
+  for = "/*"  # Applies to all files
+  [headers.values]
+    Access-Control-Allow-Origin = "https://spiffy-churros-3d8bb5.netlify.app/"  # Your React app's URL
+
+# Redirect all direct access to a 404 page
+[[redirects]]
+  from = "/protected-files/*"  # Redirects requests for protected files
+  to = "/404.html"  # Redirect to a 404 page
+  status = 404  # HTTP status code
+  force = true  # Force the redirect
+

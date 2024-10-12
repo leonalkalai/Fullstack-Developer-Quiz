@@ -282,11 +282,12 @@ main {
   align-items: center;
   /* padding: 1rem 2rem; */
   padding: 1rem 4rem;
+  flex-wrap: wrap;
 }
 
 #answers-section div {
   flex-wrap: wrap;
-  align-items: center;
+  align-items:flex-start;
   justify-content: center;
 }
 
@@ -353,6 +354,7 @@ button.answer {
   border: 0;
   padding: 0.75rem;
   box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+  height: fit-content;
 }
 
 button.answer:hover {

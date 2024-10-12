@@ -19,6 +19,7 @@ import Paging from "./components/Paging";
 import "./App.css";
 import "./animate.css";
 import QuizResults from "./components/QuizResults";
+import QuestionsFetcher from './components/QuestionsFetcher';
 import html5_questions from "./components/questions_database/html5_questions/html5_questions";
 import css3_questions from "./components/questions_database/css3_questions/css3_questions";
 import js_questions from "./components/questions_database/js_questions/js_questions";
@@ -26,6 +27,14 @@ import react_questions from "./components/questions_database/react_questions/rea
 import ScoreIndicatorBoard from "./components/ScoreIndicatorBoard";
 
 function App(props) {
+
+  const [questions, setQuestions] = useState({
+    html5_questions: [],
+    css3_questions: [],
+    js_questions: [],
+    react_questions: [],
+  });
+
   const [categoryValue, setCategoryValue] = useState("");
   const [questionsList, setQuestionsList] = useState([]);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -128,16 +137,25 @@ function App(props) {
 
   return (
     <div className="app-container">
+      <QuestionsFetcher setQuestions={setQuestions} />
       {showApp === false ? (
         <MainMenu
           category={categoryValue}
           setCategoryValue={setCategoryValue}
           questions={questionsList}
           questionsList={questionsList}
-          html5_questions={html5_questions}
-          css3_questions={css3_questions}
-          js_questions={js_questions}
-          react_questions={react_questions}
+
+          // html5_questions={html5_questions}
+          // css3_questions={css3_questions}
+          // js_questions={js_questions}
+          // react_questions={react_questions}
+
+          html5_questions={questions.html5_questions}
+          css3_questions={questions.css3_questions}
+          js_questions={questions.js_questions}
+          react_questions={questions.react_questions}
+
+
           setQuestionsList={updateSetQuestionsList}
           showApp={showApp}
           setShowApp={setShowApp}
