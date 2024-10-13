@@ -10,7 +10,7 @@
 [[headers]]
   for = "/*"  # Applies to all files
   [headers.values]
-    Access-Control-Allow-Origin = "https://spiffy-churros-3d8bb5.netlify.app/"  # Your React app's URL
+    Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app/"  # Your React app's URL
 
 # Redirect all direct access to a 404 page
 [[redirects]]

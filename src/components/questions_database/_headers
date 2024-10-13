@@ -2,3 +2,19 @@
   X-Robots-Tag: noindex
   X-Frame-Options: DENY
   Referrer-Policy: no-referrer
+  
+/* 
+Access-Control-Allow-Origin: https://fullstack-developer-quiz-106b8dfhn-leonalkalais-projects.vercel.app
+
+/html5_questions/*
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz-106b8dfhn-leonalkalais-projects.vercel.app
+
+/css3_questions/*
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz-106b8dfhn-leonalkalais-projects.vercel.app
+
+/js_questions/*
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz-106b8dfhn-leonalkalais-projects.vercel.app
+
+/react_questions/*
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz-106b8dfhn-leonalkalais-projects.vercel.app
+  
