@@ -9,15 +9,15 @@ const QuestionsFetcher = ({ setQuestions }) => {
     const fetchQuestions = async () => {
       console.log('Response Starting:');
       try {
-        // const html5Response = await fetch(`${urlPath}/html5_questions/html5_questions.json`);
-        // const css3Response = await fetch(`${urlPath}/css3_questions/css3_questions.json`);
-        // const jsResponse = await fetch(`${urlPath}/js_questions/js_questions.json`); 
-        // const reactResponse = await fetch(`${urlPath}/react_questions/react_questions.json`); 
+        const html5Response = await fetch(`${urlPath}/html5_questions/html5_questions.json`);
+        const css3Response = await fetch(`${urlPath}/css3_questions/css3_questions.json`);
+        const jsResponse = await fetch(`${urlPath}/js_questions/js_questions.json`); 
+        const reactResponse = await fetch(`${urlPath}/react_questions/react_questions.json`); 
 
-        const html5Response = await fetch(`html5_questions/html5_questions.json`);
-        const css3Response = await fetch(`css3_questions/css3_questions.json`);
-        const jsResponse = await fetch(`js_questions/js_questions.json`); 
-        const reactResponse = await fetch(`react_questions/react_questions.json`); 
+        // const html5Response = await fetch(`html5_questions/html5_questions.json`);
+        // const css3Response = await fetch(`css3_questions/css3_questions.json`);
+        // const jsResponse = await fetch(`js_questions/js_questions.json`); 
+        // const reactResponse = await fetch(`react_questions/react_questions.json`); 
         
         console.log('HTML5 Response Status:', html5Response); // Log status
 
