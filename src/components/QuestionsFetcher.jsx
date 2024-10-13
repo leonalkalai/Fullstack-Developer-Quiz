@@ -9,10 +9,23 @@ const QuestionsFetcher = ({ setQuestions }) => {
     const fetchQuestions = async () => {
 
       try {
-        const html5Response = await fetch(`${urlPath}/html5_questions/html5_questions.json`);
-        const css3Response = await fetch(`${urlPath}/css3_questions/css3_questions.js`);
-        const jsResponse = await fetch(`${urlPath}/js_questions/js_questions.json`); 
-        const reactResponse = await fetch(`${urlPath}/react_questions/react_questions.json`); 
+        // const html5Response = await fetch(`${urlPath}/html5_questions/html5_questions.json`);
+        // const css3Response = await fetch(`${urlPath}/css3_questions/css3_questions.js`);
+        // const jsResponse = await fetch(`${urlPath}/js_questions/js_questions.json`); 
+        // const reactResponse = await fetch(`${urlPath}/react_questions/react_questions.json`); 
+
+        const html5Response = await fetch(`${urlPath}/html5_questions/html5_questions.json`, {
+          mode: 'no-cors'
+        });
+        const css3Response = await fetch(`${urlPath}/css3_questions/css3_questions.js`, {
+          mode: 'no-cors'
+        });
+        const jsResponse = await fetch(`${urlPath}/js_questions/js_questions.json`, {
+          mode: 'no-cors'
+        });
+        const reactResponse = await fetch(`${urlPath}/react_questions/react_questions.json`, {
+          mode: 'no-cors'
+        });
 
         if (!html5Response.ok || !css3Response.ok || !jsResponse.ok || !reactResponse.ok) {
           throw new Error('Network response was not ok');
