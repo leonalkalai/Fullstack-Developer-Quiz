@@ -10,14 +10,27 @@
 
 /html5_questions/*
   Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
+  Referrer-Policy: strict-origin-when-cross-origin
 
 /css3_questions/*
   Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
+  Referrer-Policy: strict-origin-when-cross-origin
 
 /js_questions/*
   Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
+  Referrer-Policy: strict-origin-when-cross-origin
 
 /react_questions/*
   Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
+  Referrer-Policy: strict-origin-when-cross-origin
+
 
   
