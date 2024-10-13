@@ -14,9 +14,15 @@ const QuestionsFetcher = ({ setQuestions }) => {
         const jsResponse = await fetch(`${urlPath}/js_questions/js_questions.json`); 
         const reactResponse = await fetch(`${urlPath}/react_questions/react_questions.json`); 
 
+        console.log('HTML5 Response Status:', html5Response.status); // Log status
+        console.log('CSS3 Response Status:', css3Response.status); // Log status
+        console.log('JS Response Status:', jsResponse.status); // Log status
+        console.log('React Response Status:', reactResponse.status); // Log status
+
         // const html5Response = await fetch(`${urlPath}/html5_questions/html5_questions.json`, {
         //   mode: 'no-cors'
         // });
+
         if (html5Response.status !== 200) {
         //if (!html5Response.ok) {
           console.error(`HTML5 questions fetch failed: ${html5Response.status} - ${html5Response.statusText}`);
