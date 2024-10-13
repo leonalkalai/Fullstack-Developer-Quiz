@@ -17,7 +17,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
         const html5Response = await fetch(`${urlPath}/html5_questions/html5_questions.json`, {
           mode: 'no-cors'
         });
-        const css3Response = await fetch(`${urlPath}/css3_questions/css3_questions.js`, {
+        const css3Response = await fetch(`${urlPath}/css3_questions/css3_questions.json`, {
           mode: 'no-cors'
         });
         const jsResponse = await fetch(`${urlPath}/js_questions/js_questions.json`, {
