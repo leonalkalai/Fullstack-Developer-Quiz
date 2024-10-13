@@ -43,7 +43,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
         //if (!reactResponse.ok) {
           console.error(`react questions fetch failed: ${reactResponse.status} - ${reactResponse.statusText}`);
         }
-        if (html5Response.status !== 200 || css3Response.status !== 200 || jsResponse.status !== 200 || reactResponse.status !== 200 {
+        if (html5Response.status !== 200 || css3Response.status !== 200 || jsResponse.status !== 200 || reactResponse.status !== 200) {
         //if (!html5Response.ok || !css3Response.ok || !jsResponse.ok || !reactResponse.ok) {
           throw new Error('Network response was not ok');
         }
