@@ -2,10 +2,20 @@
   X-Robots-Tag: noindex
   X-Frame-Options: DENY
   Referrer-Policy: no-referrer
-  
-/* 
-  Access-Control-Allow-Origin: *
-  Access-Control-Allow-Methods: GET, OPTIONS
-  Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
+ 
 
+/* 
+Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app/
+
+/html5_questions/*
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app/
+
+/css3_questions/*
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app/
+
+/js_questions/*
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app/
+
+/react_questions/*
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app/
   
