@@ -1,7 +1,8 @@
-/html5_questions/*  /404.html  404
-/css3_questions/*   /404.html  404
-/js_questions/*     /404.html  404
-/react_questions/*  /404.html  404
+/html5_questions/html5_questions.json   /404.html  404
+/css3_questions/css3_questions.json     /404.html  404
+/js_questions/js_questions.json         /404.html  404
+/react_questions/react_questions.json   /404.html  404
+
 
 
 
