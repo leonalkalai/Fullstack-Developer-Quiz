@@ -13,6 +13,8 @@
     Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
     Access-Control-Allow-Methods = "GET, OPTIONS"
     Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
+    X-Robots-Tag = "none"  # Override global noindex
+    X-Frame-Options = "ALLOW"  # Allow embedding if necessary
 
 [[headers]]
   for = "/css3_questions/css3_questions.json"
@@ -20,6 +22,8 @@
     Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
     Access-Control-Allow-Methods = "GET, OPTIONS"
     Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
+    X-Robots-Tag = "none"  # Override global noindex
+    X-Frame-Options = "ALLOW"  # Allow embedding if necessary
 
 [[headers]]
   for = "/js_questions/js_questions.json"
@@ -27,6 +31,8 @@
     Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
     Access-Control-Allow-Methods = "GET, OPTIONS"
     Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
+    X-Robots-Tag = "none"  # Override global noindex
+    X-Frame-Options = "ALLOW"  # Allow embedding if necessary
 
 [[headers]]
   for = "/react_questions/react_questions.json"
@@ -34,28 +40,34 @@
     Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
     Access-Control-Allow-Methods = "GET, OPTIONS"
     Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
+    X-Robots-Tag = "none"  # Override global noindex
+    X-Frame-Options = "ALLOW"  # Allow embedding if necessary
 
 # Redirect all direct access to the JSON files to a 404 page
 [[redirects]]
   from = "/html5_questions/html5_questions.json"
   to = "/404.html"
-  status = 302
+  status = 403
   force = true
+  conditions = { referrer = "https://fullstack-developer-quiz.vercel.app" }
 
 [[redirects]]
   from = "/css3_questions/css3_questions.json"
   to = "/404.html"
-  status = 302
+  status = 403
   force = true
+  conditions = { referrer = "https://fullstack-developer-quiz.vercel.app" }
 
 [[redirects]]
   from = "/js_questions/js_questions.json"
   to = "/404.html"
-  status = 302
+  status = 403
   force = true
+  conditions = { referrer = "https://fullstack-developer-quiz.vercel.app" }
 
 [[redirects]]
   from = "/react_questions/react_questions.json"
   to = "/404.html"
-  status = 302
+  status = 403
   force = true
+  conditions = { referrer = "https://fullstack-developer-quiz.vercel.app" }
