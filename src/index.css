@@ -5,7 +5,7 @@ html,body {
   background-color: #ffffff;
 }
 
-html[data-theme="light"] {
+html[data-theme="light"], body[data-theme="light"] {
   background-color: #ffffff;
   color: black;
 }
