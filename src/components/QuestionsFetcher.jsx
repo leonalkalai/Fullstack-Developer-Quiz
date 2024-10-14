@@ -63,18 +63,18 @@ const QuestionsFetcher = ({ setQuestions }) => {
         }
 
         // Proceed with fetching data regardless of the status code
-        const html5_questions = html5Response.status === 403 ? [] : await html5Response.json();
-        const css3_questions = css3Response.status === 403 ? [] : await css3Response.json();
-        const js_questions = jsResponse.status === 403 ? [] : await jsResponse.json();
-        const react_questions = reactResponse.status === 403 ? [] : await reactResponse.json();
+        // const html5_questions = html5Response.status === 403 ? [] : await html5Response.json();
+        // const css3_questions = css3Response.status === 403 ? [] : await css3Response.json();
+        // const js_questions = jsResponse.status === 403 ? [] : await jsResponse.json();
+        // const react_questions = reactResponse.status === 403 ? [] : await reactResponse.json();
 
-        //const html5_questions = await html5Response.json();
+        const html5_questions = await html5Response.json();
         console.log('HTML5 Questions:', html5_questions); // Log the data
-        //const css3_questions = await css3Response.json();
+        const css3_questions = await css3Response.json();
         console.log('CSS3 Questions:', css3_questions); // Log the data
-        //const js_questions = await jsResponse.json();
+        const js_questions = await jsResponse.json();
         console.log('JS Questions:', js_questions); // Log the data
-        //const react_questions = await reactResponse.json();
+        const react_questions = await reactResponse.json();
         console.log('React Questions:', react_questions); // Log the data
 
         // Set the fetched questions in the parent component

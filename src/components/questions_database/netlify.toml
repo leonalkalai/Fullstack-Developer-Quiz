@@ -43,27 +43,27 @@
 [[redirects]]
   from = "/html5_questions/html5_questions.json"
   to = "/404.html"
-  status = 403
+  status = 200
   force = true
   conditions = { referrer = "https://fullstack-developer-quiz.vercel.app" }
 
 [[redirects]]
   from = "/css3_questions/css3_questions.json"
   to = "/404.html"
-  status = 403
+  status = 200
   force = true
   conditions = { referrer = "https://fullstack-developer-quiz.vercel.app" }
 
 [[redirects]]
   from = "/js_questions/js_questions.json"
   to = "/404.html"
-  status = 403
+  status = 200
   force = true
   conditions = { referrer = "https://fullstack-developer-quiz.vercel.app" }
 
 [[redirects]]
   from = "/react_questions/react_questions.json"
   to = "/404.html"
-  status = 403
+  status = 200
   force = true
   conditions = { referrer = "https://fullstack-developer-quiz.vercel.app" }
