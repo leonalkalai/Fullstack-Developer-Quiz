@@ -1,15 +1,3 @@
-/* Force light mode regardless of system preferences */
-html {
-  background-color: white;
-}
-
-/* If the system is in dark mode, override it with light mode */
-@media (prefers-color-scheme: dark) {
-  html {
-    background-color: white;
-  }
-}
-
 #root {
   max-width: 100%;
   margin: 0 auto;

@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
+/* Force light mode regardless of system preferences */
+html {
+  background-color: white;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
+
+/* If the system is in dark mode, override it with light mode */
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #ffffff;
+  }
+  :root{
+    background-color: #ffffff;
+  }
+}
+
 :root {
   font-family: "Rubik", sans-serif;
   line-height: 1.5;
@@ -56,13 +78,6 @@ button {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
 }
 
 /* Custom css */
