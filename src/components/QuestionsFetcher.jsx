@@ -9,7 +9,6 @@ const QuestionsFetcher = ({ setQuestions }) => {
     const fetchQuestions = async () => {
       console.log('Response Starting:');
       try {
-
         const html5Response = await fetch(`${urlPath}/html5_questions/html5_questions.json`);
         const css3Response = await fetch(`${urlPath}/css3_questions/css3_questions.json`);
         const jsResponse = await fetch(`${urlPath}/js_questions/js_questions.json`); 
@@ -61,12 +60,6 @@ const QuestionsFetcher = ({ setQuestions }) => {
         //if (!html5Response.ok || !css3Response.ok || !jsResponse.ok || !reactResponse.ok) {
           throw new Error('Network response was not ok');
         }
-
-        // Proceed with fetching data regardless of the status code
-        // const html5_questions = html5Response.status === 403 ? [] : await html5Response.json();
-        // const css3_questions = css3Response.status === 403 ? [] : await css3Response.json();
-        // const js_questions = jsResponse.status === 403 ? [] : await jsResponse.json();
-        // const react_questions = reactResponse.status === 403 ? [] : await reactResponse.json();
 
         const html5_questions = await html5Response.json();
         console.log('HTML5 Questions:', html5_questions); // Log the data
