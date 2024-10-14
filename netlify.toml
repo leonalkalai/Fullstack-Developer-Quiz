@@ -6,56 +6,56 @@
     X-Frame-Options = "DENY"  # Prevents embedding
     Referrer-Policy = "no-referrer"  # Controls referrer information
 
-# Allow CORS for specific directories (JSON files)
+# Allow CORS for specific JSON files
 [[headers]]
-  for = "/html5_questions/*"  # Only applies to HTML5 questions directory
+  for = "/html5_questions/html5_questions.json"
   [headers.values]
     Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
     Access-Control-Allow-Methods = "GET, OPTIONS"
     Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
 
 [[headers]]
-  for = "/css3_questions/*"  # CSS3 questions directory
+  for = "/css3_questions/css3_questions.json"
   [headers.values]
     Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
     Access-Control-Allow-Methods = "GET, OPTIONS"
     Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
 
 [[headers]]
-  for = "/js_questions/*"  # JS questions directory
+  for = "/js_questions/js_questions.json"
   [headers.values]
     Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
     Access-Control-Allow-Methods = "GET, OPTIONS"
     Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
 
 [[headers]]
-  for = "/react_questions/*"  # React questions directory
+  for = "/react_questions/react_questions.json"
   [headers.values]
     Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
     Access-Control-Allow-Methods = "GET, OPTIONS"
     Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
 
-# Redirect all direct access to the JSON files (prevent access)
+# Redirect all direct access to the JSON files to a 404 page
 [[redirects]]
-  from = "/html5_questions/*"  # Redirect requests for HTML5 questions
-  to = "/404.html"  # Redirect to a 404 page
-  status = 404  # HTTP status code
-  force = true  # Force the redirect
+  from = "/html5_questions/html5_questions.json"
+  to = "/404.html"
+  status = 404
+  force = true
 
 [[redirects]]
-  from = "/css3_questions/*"  # Redirect requests for CSS3 questions
-  to = "/404.html"  # Redirect to a 404 page
-  status = 404  # HTTP status code
-  force = true  # Force the redirect
+  from = "/css3_questions/css3_questions.json"
+  to = "/404.html"
+  status = 404
+  force = true
 
 [[redirects]]
-  from = "/js_questions/*"  # Redirect requests for JS questions
-  to = "/404.html"  # Redirect to a 404 page
-  status = 404  # HTTP status code
-  force = true  # Force the redirect
+  from = "/js_questions/js_questions.json"
+  to = "/404.html"
+  status = 404
+  force = true
 
 [[redirects]]
-  from = "/react_questions/*"  # Redirect requests for React questions
-  to = "/404.html"  # Redirect to a 404 page
-  status = 404  # HTTP status code
-  force = true  # Force the redirect
+  from = "/react_questions/react_questions.json"
+  to = "/404.html"
+  status = 404
+  force = true
