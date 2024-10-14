@@ -1,7 +1,6 @@
 /* Force light mode regardless of system preferences */
 html {
   background-color: white;
-  color: black;
 }
 
 /* If the system is in dark mode, override it with light mode */
