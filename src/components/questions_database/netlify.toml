@@ -39,23 +39,23 @@
 [[redirects]]
   from = "/html5_questions/html5_questions.json"
   to = "/404.html"
-  status = 404
+  status = 302
   force = true
 
 [[redirects]]
   from = "/css3_questions/css3_questions.json"
   to = "/404.html"
-  status = 404
+  status = 302
   force = true
 
 [[redirects]]
   from = "/js_questions/js_questions.json"
   to = "/404.html"
-  status = 404
+  status = 302
   force = true
 
 [[redirects]]
   from = "/react_questions/react_questions.json"
   to = "/404.html"
-  status = 404
+  status = 302
   force = true
