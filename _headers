@@ -30,5 +30,4 @@
   Access-Control-Allow-Methods: GET, OPTIONS
   Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
 
-
   

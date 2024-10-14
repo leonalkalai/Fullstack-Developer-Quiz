@@ -1,4 +1,4 @@
-# Headers for files in the protected directory
+# Prevent indexing and embedding for all files
 [[headers]]
   for = "/*"  # Applies to all files
   [headers.values]
@@ -6,16 +6,56 @@
     X-Frame-Options = "DENY"  # Prevents embedding
     Referrer-Policy = "no-referrer"  # Controls referrer information
 
-# Allow CORS for the specific origin (your React app)
+# Allow CORS for specific directories (JSON files)
 [[headers]]
-  for = "/*"  # Applies to all files
+  for = "/html5_questions/*"  # Only applies to HTML5 questions directory
   [headers.values]
-    Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"  # Your React app's URL
+    Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
+    Access-Control-Allow-Methods = "GET, OPTIONS"
+    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
 
-# Redirect all direct access to a 404 page
+[[headers]]
+  for = "/css3_questions/*"  # CSS3 questions directory
+  [headers.values]
+    Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
+    Access-Control-Allow-Methods = "GET, OPTIONS"
+    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
+
+[[headers]]
+  for = "/js_questions/*"  # JS questions directory
+  [headers.values]
+    Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
+    Access-Control-Allow-Methods = "GET, OPTIONS"
+    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
+
+[[headers]]
+  for = "/react_questions/*"  # React questions directory
+  [headers.values]
+    Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
+    Access-Control-Allow-Methods = "GET, OPTIONS"
+    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
+
+# Redirect all direct access to the JSON files (prevent access)
 [[redirects]]
-  from = "/protected-files/*"  # Redirects requests for protected files
+  from = "/html5_questions/*"  # Redirect requests for HTML5 questions
   to = "/404.html"  # Redirect to a 404 page
   status = 404  # HTTP status code
   force = true  # Force the redirect
 
+[[redirects]]
+  from = "/css3_questions/*"  # Redirect requests for CSS3 questions
+  to = "/404.html"  # Redirect to a 404 page
+  status = 404  # HTTP status code
+  force = true  # Force the redirect
+
+[[redirects]]
+  from = "/js_questions/*"  # Redirect requests for JS questions
+  to = "/404.html"  # Redirect to a 404 page
+  status = 404  # HTTP status code
+  force = true  # Force the redirect
+
+[[redirects]]
+  from = "/react_questions/*"  # Redirect requests for React questions
+  to = "/404.html"  # Redirect to a 404 page
+  status = 404  # HTTP status code
+  force = true  # Force the redirect
