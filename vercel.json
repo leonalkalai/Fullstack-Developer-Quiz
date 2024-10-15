@@ -16,6 +16,7 @@
       "destination": "/"
     }
   ],
+  "installCommand": "npm install --legacy-peer-deps",
   "headers": [
     {
       "source": "/(.*)",
