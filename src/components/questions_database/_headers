@@ -4,8 +4,7 @@
   Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
   X-Robots-Tag: noindex
   X-Frame-Options: DENY
-  Referrer-Policy: no-referrer
-  Cache-Control: no-store
+  Referrer-Policy: no-referrer-when-downgrade
 
 /css3_questions/css3_questions.json
   Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app
@@ -13,8 +12,7 @@
   Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
   X-Robots-Tag: noindex
   X-Frame-Options: DENY
-  Referrer-Policy: no-referrer
-  Cache-Control: no-store
+  Referrer-Policy: no-referrer-when-downgrade
 
 /js_questions/js_questions.json
   Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app
@@ -22,8 +20,7 @@
   Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
   X-Robots-Tag: noindex
   X-Frame-Options: DENY
-  Referrer-Policy: no-referrer
-  Cache-Control: no-store
+  Referrer-Policy: no-referrer-when-downgrade
 
 /react_questions/react_questions.json
   Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app
@@ -31,5 +28,4 @@
   Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
   X-Robots-Tag: noindex
   X-Frame-Options: DENY
-  Referrer-Policy: no-referrer
-  Cache-Control: no-store
+  Referrer-Policy: no-referrer-when-downgrade
