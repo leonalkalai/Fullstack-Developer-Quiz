@@ -1,34 +1,25 @@
 import React, { useEffect } from 'react';
 
 const QuestionsFetcher = ({ setQuestions }) => {
-  const functionUrl = "https://spiffy-churros-3d8bb5.netlify.app/.netlify/functions/getQuestions";
-
   useEffect(() => {
     const fetchQuestions = async () => {
       console.log('Response Starting:');
       try {
-        const response = await fetch(functionUrl);
+        const response = await fetch('/.netlify/functions/fetchQuestions');
 
-        console.log('Response Status:', response.status); // Log status
-
-        if (response.status !== 200) {
-          console.error(`Fetch failed: ${response.status} - ${response.statusText}`);
-          throw new Error('Network response was not ok');
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.statusText}`);
         }
 
-        const questionsData = await response.json();
-        console.log('Questions Data:', questionsData); // Log the data
-
-        // Set the fetched questions in the parent component
-        setQuestions(questionsData);
-
+        const data = await response.json();
+        setQuestions(data);
       } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
       }
     };
 
     fetchQuestions();
-  }, [setQuestions]); // Pass setQuestions as a dependency
+  }, [setQuestions]);
 
   return null; // This component does not render anything
 };

@@ -1,36 +1,29 @@
-// netlify/functions/getQuestions.js
-const fs = require('fs');
-const path = require('path');
+const fetch = require("node-fetch"); // Ensure you have node-fetch installed
 
-exports.handler = async (event) => {
-  const fileNames = [
-    'html5_questions/html5_questions.json',
-    'css3_questions/css3_questions.json',
-    'js_questions/js_questions.json',
-    'react_questions/react_questions.json'
-  ];
+exports.handler = async (event, context) => {
+  const questions = ["html5", "css3", "js", "react"];
+  const responses = {};
 
   try {
-    const questions = {};
+    for (const question of questions) {
+      const response = await fetch(`https://spiffy-churros-3d8bb5.netlify.app/${question}_questions/${question}_questions.json`);
 
-    for (const fileName of fileNames) {
-      const jsonFilePath = path.join(__dirname, `../${fileName}`);
-      const jsonData = fs.readFileSync(jsonFilePath, 'utf8');
-      questions[fileName.split('/')[0]] = JSON.parse(jsonData);
+      if (response.ok) {
+        responses[`${question}_questions`] = await response.json();
+      } else {
+        console.error(`Error fetching ${question}:`, response.statusText);
+      }
     }
 
     return {
       statusCode: 200,
-      body: JSON.stringify(questions),
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-      },
+      body: JSON.stringify(responses),
     };
   } catch (error) {
+    console.error("Error:", error);
     return {
-      statusCode: 404,
-      body: JSON.stringify({ message: 'File Not Found' }),
+      statusCode: 500,
+      body: JSON.stringify({ error: "Failed to fetch questions" }),
     };
   }
 };
