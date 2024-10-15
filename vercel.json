@@ -4,13 +4,6 @@
     {
       "src": "package.json",
       "use": "@vercel/node"  
-    },
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"  
-      }
     }
   ],
   "rewrites": [
@@ -23,9 +16,7 @@
       "destination": "/"
     }
   ],
-  "installCommand": "npm install --legacy-peer-deps",
-  "buildCommand": "vite build", 
-  "outputDirectory": "dist",  
+  "installCommand": "npm install --legacy-peer-deps", 
   "headers": [
     {
       "source": "/(.*)",
