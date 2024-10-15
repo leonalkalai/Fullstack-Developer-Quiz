@@ -16,7 +16,6 @@
       "destination": "/"
     }
   ],
-  "installCommand": "npm install --force", 
   "headers": [
     {
       "source": "/(.*)",
