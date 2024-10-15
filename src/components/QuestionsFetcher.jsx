@@ -21,6 +21,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
     fetchQuestions();
   }, [setQuestions]);
 
+  
   return null; // This component does not render anything
 };
 
