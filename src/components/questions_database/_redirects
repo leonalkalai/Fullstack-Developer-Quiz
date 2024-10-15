@@ -1,7 +1,9 @@
-# Block direct access to JSON files with a 403 response
-/html5_questions/html5_questions.json  /html5_questions/html5_questions.json  403!
-/css3_questions/css3_questions.json    /css3_questions/css3_questions.json  403!
-/js_questions/js_questions.json       /js_questions/js_questions.json   403!
-/react_questions/react_questions.json   /react_questions/react_questions.json  403!
+/html5_questions/html5_questions.json   /404.html  403!
+/css3_questions/css3_questions.json     /404.html  403!
+/js_questions/js_questions.json         /404.html  403!
+/react_questions/react_questions.json   /404.html  403!
+
+
+
 
 
