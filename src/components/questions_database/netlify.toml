@@ -1,65 +1,33 @@
-# Prevent indexing and embedding for all files
-[[headers]]
-  for = "/*"  # Applies to all files
-  [headers.values]
-    X-Robots-Tag = "noindex"  # Prevents indexing by search engines
-    X-Frame-Options = "DENY"  # Prevents embedding
-    Referrer-Policy = "no-referrer"  # Hides referrer
+[build]
+  functions = "netlify/functions"
 
-# Allow CORS for specific JSON files
-[[headers]]
-  for = "/html5_questions/html5_questions.json"
-  [headers.values]
-    Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
-    Access-Control-Allow-Methods = "GET, OPTIONS"
-    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-[[headers]]
-  for = "/css3_questions/css3_questions.json"
-  [headers.values]
-    Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
-    Access-Control-Allow-Methods = "GET, OPTIONS"
-    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-[[headers]]
-  for = "/js_questions/js_questions.json"
-  [headers.values]
-    Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
-    Access-Control-Allow-Methods = "GET, OPTIONS"
-    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-[[headers]]
-  for = "/react_questions/react_questions.json"
-  [headers.values]
-    Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
-    Access-Control-Allow-Methods = "GET, OPTIONS"
-    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-# Block direct access to the JSON files
 [[redirects]]
   from = "/html5_questions/html5_questions.json"
-  to = "/html5_questions/"  # Prevent direct access
+  to = "/404.html"
   status = 403
-  conditions = { referrer = "" }  # Only redirect when there's no referrer
+  conditions = { referrer = "" } # Prevent direct access
 
 [[redirects]]
   from = "/css3_questions/css3_questions.json"
-  to = "/css3_questions/"
+  to = "/404.html"
   status = 403
-  conditions = { referrer = "" }
+  conditions = { referrer = "" } # Prevent direct access
 
 [[redirects]]
   from = "/js_questions/js_questions.json"
-  to = "/js_questions/"
+  to = "/404.html"
   status = 403
-  conditions = { referrer = "" }
+  conditions = { referrer = "" } # Prevent direct access
 
 [[redirects]]
   from = "/react_questions/react_questions.json"
-  to = "/react_questions/"
+  to = "/404.html"
   status = 403
-  conditions = { referrer = "" }
+  conditions = { referrer = "" } # Prevent direct access
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "https://fullstack-developer-quiz.vercel.app"
+    Access-Control-Allow-Methods = "GET, OPTIONS"
+    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
