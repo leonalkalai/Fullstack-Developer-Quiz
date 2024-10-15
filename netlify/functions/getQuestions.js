@@ -4,6 +4,7 @@ exports.handler = async (event, context) => {
   const questions = ["html5", "css3", "js", "react"];
   const responses = {};
 
+  
   try {
     for (const question of questions) {
       const response = await fetch(`https://spiffy-churros-3d8bb5.netlify.app/${question}_questions/${question}_questions.json`);
