@@ -30,9 +30,9 @@ const QuestionsFetcher = ({ setQuestions }) => {
         //   mode: 'no-cors'
         // });
 
-        // if (html5Response.status === 403) {
-        //     console.log("403");
-        // }
+        if (html5Response.status === 403) {
+            console.log("403");
+        }
 
       if (html5Response.status !== 200 && html5Response.status !== 403) {
        // if (html5Response.status !== 200) {
