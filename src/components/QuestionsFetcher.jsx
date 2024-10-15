@@ -5,7 +5,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
     const fetchQuestions = async () => {
       console.log('Response Starting:');
       try {
-        const response = await fetch('/.netlify/functions/fetchQuestions');
+        const response = await fetch('/.netlify/functions/getQuestions');
 
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.statusText}`);
