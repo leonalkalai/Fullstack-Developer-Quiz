@@ -9,3 +9,8 @@
   
   glitch 
   https://sable-boiled-wedge.glitch.me/
+  
+  https://sable-boiled-wedge.glitch.me/
+  
+   const url = "https://sable-boiled-wedge.glitch.me/api/questions";
+   const response = await fetch(`${url}?category=${category}`);

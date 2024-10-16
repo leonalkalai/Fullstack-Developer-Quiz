@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from 'react'; 
+import React, { useEffect } from 'react'; 
 
 const QuestionsFetcher = ({ setQuestions }) => {
-    const url = "https://sable-boiled-wedge.glitch.me/api/questions";
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
-                const categories = ['html', 'css', 'js', 'react'];
+              const url = "https://sable-boiled-wedge.glitch.me/api/questions";
+                const collections = ['html5_questions', 'css3_questions', 'js_questions', 'react_questions'];
                 const questionsData = {};
 
-                for (const category of categories) {
-                    const response = await fetch(`${url}?category=${category}`);
-                    if (!response.ok) throw new Error(`Error fetching ${category} questions`);
-                    questionsData[`${category}_questions`] = await response.json();
+                // Fetch data for each collection
+                for (const collection of collections) {
+                    const response = await fetch(`${url}?category=${collection}`);
+                    
+                    // Check if the response is ok
+                    if (!response.ok) throw new Error(`Error fetching ${collection} questions`);
+                    
+                    questionsData[collection] = await response.json(); // Store the data
                 }
 
                 // Set the fetched questions in the parent component
