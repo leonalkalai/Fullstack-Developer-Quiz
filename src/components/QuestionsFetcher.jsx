@@ -5,6 +5,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
         const fetchQuestions = async () => {
             try {
                 const apiKey = process.env.REACT_APP_API_KEY;
+                console.log(apiKey);
                 const url = "https://sable-boiled-wedge.glitch.me/api/questions/";
                 const collections = ['html5_questions', 'css3_questions', 'js_questions', 'react_questions'];
                 const questionsData = {};
