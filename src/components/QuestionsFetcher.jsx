@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'; 
 
 const QuestionsFetcher = ({ setQuestions }) => {
+    const url = "https://sable-boiled-wedge.glitch.me/api/questions";
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
@@ -8,7 +9,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
                 const questionsData = {};
 
                 for (const category of categories) {
-                    const response = await fetch(`/api/questions?category=${category}`);
+                    const response = await fetch(`${url}?category=${category}`);
                     if (!response.ok) throw new Error(`Error fetching ${category} questions`);
                     questionsData[`${category}_questions`] = await response.json();
                 }
