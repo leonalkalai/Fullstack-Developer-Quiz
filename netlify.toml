@@ -39,27 +39,3 @@
     Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Accept"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Block direct access to the JSON files
-[[redirects]]
-  from = "/html5_questions/html5_questions.json"
-  to = "/html5_questions/"  # Prevent direct access
-  status = 403
-  conditions = { referrer = "" }  # Only redirect when there's no referrer
-
-[[redirects]]
-  from = "/css3_questions/css3_questions.json"
-  to = "/css3_questions/"
-  status = 403
-  conditions = { referrer = "" }
-
-[[redirects]]
-  from = "/js_questions/js_questions.json"
-  to = "/js_questions/"
-  status = 403
-  conditions = { referrer = "" }
-
-[[redirects]]
-  from = "/react_questions/react_questions.json"
-  to = "/react_questions/"
-  status = 403
-  conditions = { referrer = "" }

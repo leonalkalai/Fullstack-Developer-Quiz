@@ -1,0 +1,11 @@
+  /*color: rgba(255, 255, 255, 0.87);*/
+  /*background-color: #242424;*/
+  
+  mongodb
+  koundouras
+  ExQjyYijZHzYCGeV
+  
+  mongodb+srv://koundouras:ExQjyYijZHzYCGeV@cluster0.mwgqq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+  
+  glitch 
+  https://sable-boiled-wedge.glitch.me/
