@@ -4,13 +4,19 @@ const QuestionsFetcher = ({ setQuestions }) => {
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
-              const url = "https://sable-boiled-wedge.glitch.me/api/questions/";
+                const apiKey = process.env.REACT_APP_API_KEY;
+                const url = "https://sable-boiled-wedge.glitch.me/api/questions/";
                 const collections = ['html5_questions', 'css3_questions', 'js_questions', 'react_questions'];
                 const questionsData = {};
 
                 // Fetch data for each collection
                 for (const collection of collections) {
-                    const response = await fetch(`${url}${collection}`);
+
+                  const response = await fetch(`${url}${collection}`, {
+                      headers: {
+                          'x-api-key': apiKey, // Include the API key in the request headers
+                      },
+                  });
                     
                     // Check if the response is ok
                     if (!response.ok) throw new Error(`Error fetching ${collection} questions`);
