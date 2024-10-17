@@ -6,7 +6,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
         const fetchQuestions = async () => {
             try {
                 const apiKey = import.meta.env.VITE_API_KEY;
-                const url = "https://lyrical-mixolydian-citron/api/questions";
+                const url = "https://sable-boiled-wedge.glitch.me/api/questions";
                 const collections = ['html5', 'css3', 'js', 'react'];
                 const questionsData = {};
 
