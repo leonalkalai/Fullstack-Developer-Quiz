@@ -20,10 +20,10 @@ import "./App.css";
 import "./animate.css";
 import QuizResults from "./components/QuizResults";
 import QuestionsFetcher from './components/QuestionsFetcher';
-import html5_questions from "./components/questions_database/html5_questions/html5_questions";
-import css3_questions from "./components/questions_database/css3_questions/css3_questions";
-import js_questions from "./components/questions_database/js_questions/js_questions";
-import react_questions from "./components/questions_database/react_questions/react_questions";
+// import html5_questions from "./components/questions_database/html5_questions/html5_questions";
+// import css3_questions from "./components/questions_database/css3_questions/css3_questions";
+// import js_questions from "./components/questions_database/js_questions/js_questions";
+// import react_questions from "./components/questions_database/react_questions/react_questions";
 import ScoreIndicatorBoard from "./components/ScoreIndicatorBoard";
 
 function App(props) {
