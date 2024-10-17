@@ -12,7 +12,8 @@ const QuestionsFetcher = ({ setQuestions }) => {
                 // Fetch data for each collection
                 for (const collection of collections) {
 
-                  const response = await fetch(`${url}/${collection}_questions`, {
+                  //const response = await fetch(`${url}/${collection}_questions`, {
+                const response = await fetch(`https://sable-boiled-wedge.glitch.me/api/questions/html5_questions`, {
                       headers: {
                           'x-api-key': apiKey, // Include the API key in the request headers
                       },
