@@ -47,7 +47,8 @@ function App(props) {
 
   // Function to handle the completion of questions loading
   const handleQuestionsLoaded = (questionsData) => {
-    console.log("Data received in App:", questionsData); // Check if this logs the fetched data
+    console.log("Data received in App:", questionsData.html5_questions); // Check if this logs the fetched data
+    console.log("Data received in App:", questionsData.html5); // Check if this logs the fetched data
     setQuestions(questionsData);
     setLoading(false);  // Set loading to false once questions are loaded
   };  
@@ -151,10 +152,10 @@ function App(props) {
           setCategoryValue={setCategoryValue}
           questions={questionsList}
           questionsList={questionsList}
-          html5_questions={questions.html}
-          css3_questions={questions.css3}
-          js_questions={questions.js}
-          react_questions={questions.react}
+          html5_questions={questions.html5_questions}
+          css3_questions={questions.css3_questions}
+          js_questions={questions.js_questions}
+          react_questions={questions.react_questions}
           setQuestionsList={updateSetQuestionsList}
           showApp={showApp}
           setShowApp={setShowApp}
