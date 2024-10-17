@@ -47,7 +47,7 @@ function App(props) {
 
   // Function to handle the completion of questions loading
   const handleQuestionsLoaded = (questionsData) => {
-    setQuestions(questionsData.css3);
+    setQuestions(questionsData);
     setLoading(false);  // Set loading to false once questions are loaded
   };  
 
@@ -120,6 +120,7 @@ function App(props) {
   }
 
   useEffect(() => {
+    console.log('Questions:', questions);
     setCorrectState([]);
     if (showSlider === "slide-right") {
       const slidertimeout = setTimeout(() => {
