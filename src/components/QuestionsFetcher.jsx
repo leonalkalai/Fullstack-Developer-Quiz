@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 const QuestionsFetcher = ({ setQuestions }) => {
     useEffect(() => {
+        
         const fetchQuestions = async () => {
             try {
                 const apiKey = import.meta.env.VITE_API_KEY;
