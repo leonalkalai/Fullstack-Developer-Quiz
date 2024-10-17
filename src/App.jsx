@@ -47,8 +47,7 @@ function App(props) {
 
   // Function to handle the completion of questions loading
   const handleQuestionsLoaded = (questionsData) => {
-    setQuestions(questionsData);
-    console.log(questionsData[0]);
+    setQuestions(questionsData.css3);
     setLoading(false);  // Set loading to false once questions are loaded
   };  
 
