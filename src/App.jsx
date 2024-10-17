@@ -20,6 +20,7 @@ function App(props) {
     react_questions: [],
   });
 
+  const [loading, setLoading] = useState(true); // Added loading state
   const [categoryValue, setCategoryValue] = useState("");
   const [questionsList, setQuestionsList] = useState([]);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -41,6 +42,12 @@ function App(props) {
   const [isSelectedDiff, setIsSelectedDiff] = useState(false);
   const [questionsNumberPickerValue, setQuestionsNumberPickerValue] =
     useState(1);
+
+  // Function to handle the completion of questions loading
+  const handleQuestionsLoaded = (questionsData) => {
+    setQuestions(questionsData);
+    setLoading(false);  // Set loading to false once questions are loaded
+  };  
 
   function chooseHome() {
     setShowApp(false);
@@ -122,7 +129,13 @@ function App(props) {
 
   return (
     <div className="app-container">
-      <QuestionsFetcher setQuestions={setQuestions} />
+       {/*  <QuestionsFetcher setQuestions={setQuestions} />  */}
+       {/* Check if loading */}
+    {loading ? (
+      <div>Loading questions...</div> // Show loading message or spinner
+    ) : (
+      <>
+        {/* Your existing logic to display the main menu or other components */}
       {showApp === false ? (
         <MainMenu
           category={categoryValue}
@@ -218,6 +231,10 @@ function App(props) {
           </>
         )
       )}
+      </>
+      )}
+      {/* Fetch questions */}
+      <QuestionsFetcher setQuestions={handleQuestionsLoaded} />
     </div>
   );
 }
