@@ -9,7 +9,6 @@ const QuestionsFetcher = ({ setQuestions }) => {
                 const collections = ['html5', 'css3', 'js', 'react'];
                 const questionsData = {};
 
-                 console.log(questionsData);
                 // Fetch data for each collection
                 for (const collection of collections) {
 
@@ -24,7 +23,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
                     
                     questionsData[collection] = await response.json(); // Store the data
                 }
-
+                console.log(questionsData);
                 // Set the fetched questions in the parent component
                 setQuestions(questionsData);
             } catch (error) {
