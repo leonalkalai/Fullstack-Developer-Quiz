@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 
 const QuestionsFetcher = ({ setQuestions }) => {
     useEffect(() => {
-
+        
         const fetchQuestions = async () => {
             try {
                 const apiKey = import.meta.env.VITE_API_KEY;
-                const url = "lyrical-mixolydian-citron/api/questions";
+                const url = "https://lyrical-mixolydian-citron/api/questions";
                 const collections = ['html5', 'css3', 'js', 'react'];
                 const questionsData = {};
 
