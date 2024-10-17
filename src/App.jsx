@@ -110,15 +110,48 @@ function App(props) {
     setQuestionsNumberPickerValue(value);
   }
 
+  // useEffect(() => {
+  //   setCorrectState([]);
+  //   if (showSlider === "slide-right") {
+  //     const slidertimeout = setTimeout(() => {
+  //       setShowSlider("");
+  //     }, 1200);
+  //     return () => clearTimeout(slidertimeout);
+  //   }
+  // }, [showSlider]);
+
   useEffect(() => {
+    // Reset correct state
     setCorrectState([]);
+
+    // Handle slider timeout
     if (showSlider === "slide-right") {
-      const slidertimeout = setTimeout(() => {
-        setShowSlider("");
-      }, 1200);
-      return () => clearTimeout(slidertimeout);
+        const slidertimeout = setTimeout(() => {
+            setShowSlider("");
+        }, 1200);
+        return () => clearTimeout(slidertimeout);
     }
-  }, [showSlider]);
+
+    // Update questions list based on category value
+    if (categoryValue === "html") {
+        if (questions.html5_questions.length > 0) {
+            setQuestionsList(questions.html5_questions.slice(0, questionsNumberPickerValue));
+        }
+    } else if (categoryValue === "css") {
+        if (questions.css3_questions.length > 0) {
+            setQuestionsList(questions.css3_questions.slice(0, questionsNumberPickerValue));
+        }
+    } else if (categoryValue === "js") {
+        if (questions.js_questions.length > 0) {
+            setQuestionsList(questions.js_questions.slice(0, questionsNumberPickerValue));
+        }
+    } else if (categoryValue === "react") {
+        if (questions.react_questions.length > 0) {
+            setQuestionsList(questions.react_questions.slice(0, questionsNumberPickerValue));
+        }
+    }
+}, [showSlider, questions, questionsNumberPickerValue, categoryValue]);
+
 
   return (
     <div className="app-container">
