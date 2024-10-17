@@ -49,7 +49,12 @@ function App(props) {
   const handleQuestionsLoaded = (questionsData) => {
     console.log("Data received in App:", questionsData.html5_questions); // Check if this logs the fetched data
     console.log("Data received in App:", questionsData.html5); // Check if this logs the fetched data
-    setQuestions(questionsData);
+    setQuestions({
+      html5_questions: questionsData.html5,
+      css3_questions: questionsData.css3,
+      js_questions: questionsData.js,
+      react_questions: questionsData.react,
+  });
     setLoading(false);  // Set loading to false once questions are loaded
   };  
 
