@@ -47,6 +47,7 @@ function App(props) {
 
   // Function to handle the completion of questions loading
   const handleQuestionsLoaded = (questionsData) => {
+    console.log("Data received in App:", questionsData); // Check if this logs the fetched data
     setQuestions(questionsData);
     setLoading(false);  // Set loading to false once questions are loaded
   };  
@@ -120,15 +121,20 @@ function App(props) {
   }
 
   useEffect(() => {
-    console.log('Questions:', questions);
-    setCorrectState([]);
+    setCorrectState([]); 
     if (showSlider === "slide-right") {
       const slidertimeout = setTimeout(() => {
         setShowSlider("");
       }, 1200);
-      return () => clearTimeout(slidertimeout);
+      
+      return () => clearTimeout(slidertimeout); // Clean up the timeout
     }
-  }, [showSlider,questions]);
+  }, [showSlider]);
+
+  useEffect(() => {
+    console.log('Questions:', questions); // Logs whenever `questions` changes
+  }, [questions]); // Triggered by updates to `questions`
+  
 
   return (
     <div className="app-container">

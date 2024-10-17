@@ -25,7 +25,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
                     
                     questionsData[collection] = await response.json(); // Store the data
                 }
-                //console.log(questionsData);
+                console.log("Fetched data: ", questionsData); // Log to see what is fetched
                 // Set the fetched questions in the parent component
                 setQuestions(questionsData);
             } catch (error) {
@@ -35,7 +35,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
 
         fetchQuestions();
     //}, [setQuestions]);
-    }, []);
+    }, [setQuestions]);
 
     return null; // This component does not render anything
 };
