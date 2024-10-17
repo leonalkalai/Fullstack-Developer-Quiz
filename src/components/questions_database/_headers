@@ -1,0 +1,31 @@
+/html5_questions/html5_questions.json
+  X-Robots-Tag: noindex
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
+
+/css3_questions/css3_questions.json
+  X-Robots-Tag: noindex
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
+
+/js_questions/js_questions.json
+  X-Robots-Tag: noindex
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
+
+/react_questions/react_questions.json
+  X-Robots-Tag: noindex
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Access-Control-Allow-Origin: https://fullstack-developer-quiz.vercel.app
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept
