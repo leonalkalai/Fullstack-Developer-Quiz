@@ -129,10 +129,10 @@ function App(props) {
           setCategoryValue={setCategoryValue}
           questions={questionsList}
           questionsList={questionsList}
-          html5_questions={questions.html5_questions}
-          css3_questions={questions.css3_questions}
-          js_questions={questions.js_questions}
-          react_questions={questions.react_questions}
+          html5_questions={questions.html5_questions || []}
+          css3_questions={questions.css3_questions || []}
+          js_questions={questions.js_questions || []}
+          react_questions={questions.react_questions || []}
           setQuestionsList={updateSetQuestionsList}
           showApp={showApp}
           setShowApp={setShowApp}
