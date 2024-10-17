@@ -20,6 +20,8 @@ function App(props) {
     react_questions: [],
   });
 
+  
+
   const [loading, setLoading] = useState(true); // Added loading state
   const [categoryValue, setCategoryValue] = useState("");
   const [questionsList, setQuestionsList] = useState([]);
@@ -46,6 +48,7 @@ function App(props) {
   // Function to handle the completion of questions loading
   const handleQuestionsLoaded = (questionsData) => {
     setQuestions(questionsData);
+    console.log(questionsData);
     setLoading(false);  // Set loading to false once questions are loaded
   };  
 

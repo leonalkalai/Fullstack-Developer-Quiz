@@ -12,7 +12,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
                 // Fetch data for each collection
                 for (const collection of collections) {
                 const URI = `${url}/${collection}_questions`;
-                console.log(URI);
+                //console.log(URI);
                 const response = await fetch(URI, {
                 //const response = await fetch(`https://sable-boiled-wedge.glitch.me/api/questions/html5_questions`, {
                       headers: {
@@ -25,7 +25,7 @@ const QuestionsFetcher = ({ setQuestions }) => {
                     
                     questionsData[collection] = await response.json(); // Store the data
                 }
-                console.log(questionsData);
+                //console.log(questionsData);
                 // Set the fetched questions in the parent component
                 setQuestions(questionsData);
             } catch (error) {
