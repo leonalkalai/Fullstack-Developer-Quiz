@@ -34,7 +34,8 @@ const QuestionsFetcher = ({ setQuestions }) => {
         };
 
         fetchQuestions();
-    }, [setQuestions]);
+    //}, [setQuestions]);
+    }, []);
 
     return null; // This component does not render anything
 };
