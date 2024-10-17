@@ -128,7 +128,7 @@ function App(props) {
       }, 1200);
       return () => clearTimeout(slidertimeout);
     }
-  }, [showSlider]);
+  }, [showSlider,questions]);
 
   return (
     <div className="app-container">
