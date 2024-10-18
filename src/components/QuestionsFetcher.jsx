@@ -5,16 +5,15 @@ const QuestionsFetcher = ({ setQuestions }) => {
         const fetchQuestions = async () => {
             try {
                 const apiKey = import.meta.env.VITE_API_KEY;
-                const url = "https://sable-boiled-wedge.glitch.me/api/questions";
-                const collections = ['html5', 'css3', 'js', 'react'];
+                const url = "https://sable-boiled-wedge.glitch.me/api/fullstack_developer_quiz_database";
+                const collections = ['html5', 'css3', 'javascript', 'react'];
                 const questionsData = {};
 
                 // Fetch data for each collection
                 for (const collection of collections) {
-                const URI = `${url}/${collection}_questions`;
+                const URI = `${url}/${collection}`;
                 //console.log(URI);
                 const response = await fetch(URI, {
-                //const response = await fetch(`https://sable-boiled-wedge.glitch.me/api/questions/html5_questions`, {
                       headers: {
                           'x-api-key': apiKey, // Include the API key in the request headers
                       },

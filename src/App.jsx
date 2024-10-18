@@ -14,13 +14,11 @@ import ScoreIndicatorBoard from "./components/ScoreIndicatorBoard";
 function App(props) {
 
   const [questions, setQuestions] = useState({
-    html5_questions: [],
-    css3_questions: [],
-    js_questions: [],
-    react_questions: [],
+    html5: [],
+    css3: [],
+    javascript: [],
+    react: [],
   });
-
-  
 
   const [loading, setLoading] = useState(true); // Added loading state
   const [categoryValue, setCategoryValue] = useState("");
@@ -46,17 +44,14 @@ function App(props) {
     useState(1);
 
   // Function to handle the completion of questions loading
-  const handleQuestionsLoaded = (questionsData) => {
-    console.log("Data received in App:", questionsData.html5_questions); // Check if this logs the fetched data
-    console.log("Data received in App:", questionsData.html5); // Check if this logs the fetched data
-    setQuestions({
-      html5_questions: questionsData.html5,
-      css3_questions: questionsData.css3,
-      js_questions: questionsData.js,
-      react_questions: questionsData.react,
-  });
-    setLoading(false);  // Set loading to false once questions are loaded
-  };  
+  const loadQuestionsHandler = (questions) => {
+    if (questions && Object.keys(questions).length > 0) {
+      setQuestions(questions); // Set the questions if data exists
+    } else {
+      console.error("No questions data received.");
+    }
+    setLoading(false); // Set loading to false once questions are loaded
+  };
 
   function chooseHome() {
     setShowApp(false);
@@ -144,23 +139,22 @@ function App(props) {
 
   return (
     <div className="app-container">
-       {/*  <QuestionsFetcher setQuestions={setQuestions} />  */}
        {/* Check if loading */}
     {loading ? (
-      <div>Loading questions...</div> // Show loading message or spinner
+      <div className="questions_loading">Loading questions...</div> // Show loading message or spinner
     ) : (
       <>
-        {/* Your existing logic to display the main menu or other components */}
+      {/* logic to display the main menu or other components */}
       {showApp === false ? (
         <MainMenu
           category={categoryValue}
           setCategoryValue={setCategoryValue}
           questions={questionsList}
           questionsList={questionsList}
-          html5_questions={questions.html5_questions}
-          css3_questions={questions.css3_questions}
-          js_questions={questions.js_questions}
-          react_questions={questions.react_questions}
+          html5_questions={questions.html5}
+          css3_questions={questions.css3}
+          js_questions={questions.javascript}
+          react_questions={questions.react}
           setQuestionsList={updateSetQuestionsList}
           showApp={showApp}
           setShowApp={setShowApp}
@@ -249,7 +243,7 @@ function App(props) {
       </>
       )}
       {/* Fetch questions */}
-      <QuestionsFetcher setQuestions={handleQuestionsLoaded} />
+      <QuestionsFetcher setQuestions={loadQuestionsHandler} />
     </div>
   );
 }
